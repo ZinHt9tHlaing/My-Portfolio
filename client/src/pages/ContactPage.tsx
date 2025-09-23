@@ -112,7 +112,7 @@ const ContactPage = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="flex justify-center w-full items-center rounded-md text-base gap-2 text-white disabled:cursor-not-allowed font-semibold disabled:bg-blue-700 disabled:border-blue-700 bg-blue-600 cursor-pointer py-1 px-2 border-2 border-blue-600 active:scale-95 duration-200"
+              className="flex justify-center w-full items-center rounded-md text-base gap-2 text-white font-semibold disabled:bg-blue-700/20 disabled:border-blue-700/20 disabled:pointer-events-none bg-blue-600 cursor-pointer py-1 px-2 border-2 border-blue-600 active:scale-95 duration-200"
             >
               {isLoading && (
                 <div className="size-5 border-4 border-white border-t-transparent rounded-full animate-spin" />
@@ -160,7 +160,7 @@ const ContactPage = () => {
                 </span>
                 <div className="flex">
                   <a
-                    href="tel:+959965664813"
+                    href="tel:09965664813"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-3 text-gray-600 dark:text-gray-300 dark:hover:text-portfolio-accent duration-200 text-portfolio-text hover:text-portfolio-accent transition-colors"
@@ -169,7 +169,7 @@ const ContactPage = () => {
                   </a>
                   <span className="me-2">,</span>
                   <a
-                    href="tel:+959792746290"
+                    href="tel:09792746290"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-3 text-gray-600 dark:text-gray-300 dark:hover:text-portfolio-accent duration-200 text-portfolio-text hover:text-portfolio-accent transition-colors"

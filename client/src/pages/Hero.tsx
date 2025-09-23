@@ -5,7 +5,25 @@ import { Typewriter } from "react-simple-typewriter";
 
 const Hero = () => (
   <PageWrapper pageKey="home">
-    <div className="text-center py-16 md:py-24">
+    <div className="text-center pb-16 pt-7 md:pt-0 md:pb-24">
+      {/* Animated Profile Photo */}
+      <motion.img
+        src="/profile.jpg"
+        alt="Profile Photo"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          y: [0, -10, 0],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          repeatType: "loop",
+          ease: "easeInOut",
+        }}
+        className="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-6 shadow-lg border-4 border-gray-200 dark:border-gray-700 object-cover"
+      />
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -40,7 +58,7 @@ const Hero = () => (
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="max-w-3xl mx-auto text-gray-600 dark:text-gray-400 mb-12"
+        className="max-w-3xl mx-auto text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed text-gray-600 dark:text-gray-400 mb-12 px-4"
       >
         I specialize in building elegant and scalable full-stack applications
         with PostgreSQL, Express.js, React, and Node.js. I'm passionate about
@@ -51,23 +69,24 @@ const Hero = () => (
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="flex justify-center space-x-4 md:space-x-6"
+        className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-5 px-4"
       >
         <a
           href="/ZInHtetHlaing_Resume.pdf"
-          download="zhh_resume.pdf" // optional: specify the downloaded file name
+          download="zhh_resume.pdf"
+          className="w-full sm:w-auto"
         >
-          <button className="flex items-center px-6 py-3 rounded-full text-lg font-semibold bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-300 shadow-lg active:scale-90">
-            <Download className="mr-2" /> Download CV
+          <button className="w-[60%] mx-auto sm:mx-0 sm:w-auto flex items-center justify-center px-4 xs:px-5 md:px-6 lg:px-8 py-2 xs:py-2.5 md:py-3 rounded-full text-sm xs:text-base md:text-lg font-semibold bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300 shadow-lg active:scale-95">
+            <Download className="mr-2 h-4 w-4 md:h-5 md:w-5" /> Download CV
           </button>
         </a>
         <a
           href="https://github.com/ZinHt9tHlaing"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center px-6 py-3 rounded-full text-lg font-semibold border-2 border-gray-300 dark:border-gray-500 text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-500 transition-colors duration-300 active:scale-90"
+          className="w-[60%] mx-auto sm:mx-0 sm:w-auto flex items-center justify-center px-4 xs:px-5 md:px-6 lg:px-8 py-2 xs:py-2.5 md:py-3 rounded-full text-sm xs:text-base md:text-lg font-semibold border-2 border-gray-300 dark:border-gray-500 text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-500 transition-all duration-300 active:scale-95"
         >
-          <Github className="mr-2" /> GitHub
+          <Github className="mr-2 h-4 w-4 md:h-5 md:w-5" /> GitHub
         </a>
       </motion.div>
     </div>

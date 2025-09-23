@@ -34,7 +34,7 @@ const Navbar = ({
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-gray-900 dark:text-white font-bold text-2xl cursor-pointer"
+          className="text-gray-900 dark:text-white font-bold text-3xl cursor-pointer"
           onClick={() => navigate("/")}
         >
           &lt;<span className="text-blue-500">ZHH</span> /&gt;

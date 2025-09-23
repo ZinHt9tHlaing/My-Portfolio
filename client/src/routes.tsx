@@ -10,7 +10,7 @@ export const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      { index: true, element: <Hero handlePageChange={() => {}} /> },
+      { index: true, element: <Hero /> },
       { path: "/about", element: <AboutPage /> },
       { path: "/projects", element: <Projects /> },
       { path: "/contact", element: <ContactPage /> },

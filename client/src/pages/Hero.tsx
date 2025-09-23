@@ -1,13 +1,9 @@
-import { Briefcase, Github } from "lucide-react";
+import { Download, Github } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 
-interface HeroProps {
-  handlePageChange: (page: string) => void;
-}
-
-const Hero = ({ handlePageChange }: HeroProps) => (
+const Hero = () => (
   <PageWrapper pageKey="home">
     <div className="text-center py-16 md:py-24">
       <motion.h1
@@ -19,7 +15,6 @@ const Hero = ({ handlePageChange }: HeroProps) => (
         Hi, I'm <span className="text-blue-500">Zin Htet</span>
       </motion.h1>
 
-      
       <motion.p
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -27,8 +22,12 @@ const Hero = ({ handlePageChange }: HeroProps) => (
         className="text-lg sm:text-2xl text-gray-600 dark:text-gray-400 mb-8"
       >
         <Typewriter
-          words={["Hi, I'm a  FullStack Developer.", "React & Node.js Lover","I build web applications for a living."]}
-          loop={0} 
+          words={[
+            "Hi, I'm a  FullStack Developer.",
+            "React & Node.js Lover",
+            "I build web applications for a living.",
+          ]}
+          loop={0}
           cursor
           cursorStyle="|"
           typeSpeed={70}
@@ -54,17 +53,19 @@ const Hero = ({ handlePageChange }: HeroProps) => (
         transition={{ duration: 0.8, delay: 0.6 }}
         className="flex justify-center space-x-4 md:space-x-6"
       >
-        <button
-          onClick={() => handlePageChange("projects")}
-          className="flex items-center px-6 py-3 rounded-full text-lg font-semibold bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-300 shadow-lg"
+        <a
+          href="/ZInHtetHlaing_Resume.pdf"
+          download="zhh_resume.pdf" // optional: specify the downloaded file name
         >
-          <Briefcase className="mr-2" /> View My Work
-        </button>
+          <button className="flex items-center px-6 py-3 rounded-full text-lg font-semibold bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-300 shadow-lg active:scale-90">
+            <Download className="mr-2" /> Download CV
+          </button>
+        </a>
         <a
           href="https://github.com/ZinHt9tHlaing"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center px-6 py-3 rounded-full text-lg font-semibold border-2 border-gray-300 dark:border-gray-500 text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-500 transition-colors duration-300 active:scale-95"
+          className="flex items-center px-6 py-3 rounded-full text-lg font-semibold border-2 border-gray-300 dark:border-gray-500 text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-500 transition-colors duration-300 active:scale-90"
         >
           <Github className="mr-2" /> GitHub
         </a>

@@ -28,7 +28,10 @@ const ContactPage = () => {
     setIsLoading(true);
 
     setTimeout(() => {
-      toast.success("Message sent successfully!");
+      toast.success("Message sent successfully!", {
+      position: window.innerWidth < 640 ? "top-center" : "bottom-right", 
+      autoClose: 2500,
+    });
       console.log("Form data submitted:", data);
       setIsLoading(false);
       reset();

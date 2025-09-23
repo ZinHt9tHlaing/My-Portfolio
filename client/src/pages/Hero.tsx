@@ -10,19 +10,15 @@ const Hero = () => (
       <motion.img
         src="/profile.jpg"
         alt="Profile Photo"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{
-          opacity: 1,
-          scale: 1,
-          y: [0, -10, 0],
-        }}
+        initial={{ y: 0 }}
+        animate={{ y: [0, -10, 0] }}
         transition={{
-          duration: 4,
+          duration: 2,
           repeat: Infinity,
           repeatType: "loop",
           ease: "easeInOut",
         }}
-        className="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-6 shadow-lg border-4 border-gray-200 dark:border-gray-700 object-cover"
+        className="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-6 shadow-lg border-4 border-gray-300 dark:border-gray-700 object-cover"
       />
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
@@ -76,17 +72,19 @@ const Hero = () => (
           download="zhh_resume.pdf"
           className="w-full sm:w-auto"
         >
-          <button className="w-[60%] mx-auto sm:mx-0 sm:w-auto flex items-center justify-center px-4 xs:px-5 md:px-6 lg:px-8 py-2 xs:py-2.5 md:py-3 rounded-full text-sm xs:text-base md:text-lg font-semibold bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300 shadow-lg active:scale-95">
-            <Download className="mr-2 h-4 w-4 md:h-5 md:w-5" /> Download CV
+          <button className="w-[60%] mx-auto sm:mx-0 sm:w-auto flex items-center justify-center px-4 xs:px-5 md:px-6 lg:px-8 py-2 xs:py-2.5 md:py-3 rounded-full text-sm xs:text-base md:text-lg font-semibold bg-blue-600 border-2 border-blue-500 hover:bg-blue-700 text-white transition-all duration-300 shadow-lg active:scale-95">
+            <Download className="mr-2 size-4 md:h-5 md:w-5" /> Download CV
           </button>
         </a>
         <a
           href="https://github.com/ZinHt9tHlaing"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-[60%] mx-auto sm:mx-0 sm:w-auto flex items-center justify-center px-4 xs:px-5 md:px-6 lg:px-8 py-2 xs:py-2.5 md:py-3 rounded-full text-sm xs:text-base md:text-lg font-semibold border-2 border-gray-300 dark:border-gray-500 text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-500 transition-all duration-300 active:scale-95"
+          className="w-full sm:w-auto"
         >
-          <Github className="mr-2 h-4 w-4 md:h-5 md:w-5" /> GitHub
+          <button className="w-[60%] mx-auto sm:mx-0 sm:w-auto flex items-center justify-center px-4 xs:px-5 md:px-6 lg:px-8 py-2 xs:py-2.5 md:py-3 rounded-full text-sm xs:text-base md:text-lg font-semibold border-2 border-gray-300 dark:border-gray-500 text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-500 transition-all duration-300 active:scale-95">
+            <Github className="mr-2 size-4 md:h-5 md:w-5" /> GitHub
+          </button>
         </a>
       </motion.div>
     </div>

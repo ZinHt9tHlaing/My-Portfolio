@@ -6,6 +6,7 @@ import Projects from "./pages/Projects";
 import Navbar from "./components/Navbar";
 import { AnimatePresence } from "framer-motion";
 import Footer from "./components/Footer";
+import { Bounce, ToastContainer } from "react-toastify";
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState("home");
@@ -55,6 +56,19 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-300 font-sans">
+      <ToastContainer
+        position="bottom-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition={Bounce}
+      />
       <Navbar
         currentPage={currentPage}
         handlePageChange={handlePageChange}

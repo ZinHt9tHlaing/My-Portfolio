@@ -1,9 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Code, Home, Menu, Moon, Smartphone, Sun, User, X } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 interface NavbarProps {
-  currentPage: string;
-  handlePageChange: (page: string) => void;
   isMenuOpen: boolean;
   setIsMenuOpen: (isOpen: boolean) => void;
   theme: string;
@@ -11,19 +10,22 @@ interface NavbarProps {
 }
 
 const Navbar = ({
-  currentPage,
-  handlePageChange,
   isMenuOpen,
   setIsMenuOpen,
   theme,
   handleThemeToggle,
 }: NavbarProps) => {
+  const navigate = useNavigate();
+  const location = useLocation(); 
+
   const navLinks = [
-    { name: "Home", page: "home", icon: <Home /> },
-    { name: "About", page: "about", icon: <User /> },
-    { name: "Projects", page: "projects", icon: <Code /> },
-    { name: "Contact", page: "contact", icon: <Smartphone /> },
+    { name: "Home", path: "/", icon: <Home /> },
+    { name: "About", path: "/about", icon: <User /> },
+    { name: "Projects", path: "/projects", icon: <Code /> },
+    { name: "Contact", path: "/contact", icon: <Smartphone /> },
   ];
+
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <nav className="fixed w-full z-50 top-0 bg-white dark:bg-gray-900 shadow-md py-4 transition-all duration-300">
@@ -32,11 +34,10 @@ const Navbar = ({
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-gray-900 dark:text-white font-bold text-2xl"
+          className="text-gray-900 dark:text-white font-bold text-2xl cursor-pointer"
+          onClick={() => navigate("/")}
         >
-          <a href="#" onClick={() => handlePageChange("home")}>
-            &lt;<span className="text-blue-500">ZHH</span> /&gt;
-          </a>
+          &lt;<span className="text-blue-500">ZHH</span> /&gt;
         </motion.div>
 
         {/* Desktop Menu */}
@@ -44,13 +45,13 @@ const Navbar = ({
           {navLinks.map((link) => (
             <button
               key={link.name}
-              onClick={() => handlePageChange(link.page)}
+              onClick={() => navigate(link.path)}
               className={`flex items-center space-x-2 p-2 rounded-lg transition-colors duration-200 
-              ${
-                currentPage === link.page
-                  ? "text-blue-500 bg-gray-100 dark:bg-gray-800"
-                  : "text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-800"
-              }`}
+                ${
+                  isActive(link.path)
+                    ? "text-blue-500 bg-gray-100 dark:bg-gray-800"
+                    : "text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-800"
+                }`}
             >
               <span className="text-lg">{link.name}</span>
             </button>
@@ -98,9 +99,12 @@ const Navbar = ({
               {navLinks.map((link) => (
                 <button
                   key={link.name}
-                  onClick={() => handlePageChange(link.page)}
+                  onClick={() => {
+                    navigate(link.path);
+                    setIsMenuOpen(false);
+                  }}
                   className={`text-3xl font-bold p-4 rounded-lg transition-colors duration-200 ${
-                    currentPage === link.page
+                    isActive(link.path)
                       ? "text-blue-500"
                       : "text-gray-600 dark:text-gray-300 hover:text-blue-500"
                   }`}
@@ -115,4 +119,5 @@ const Navbar = ({
     </nav>
   );
 };
+
 export default Navbar;

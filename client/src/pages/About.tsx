@@ -19,7 +19,7 @@ const About = () => (
         className="w-full md:w-1/2"
       >
         <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-          Hello! I'm a passionate and motivated MERN stack developer with a
+          Hello! I'm a passionate and motivated FullStack developer with a
           strong foundation in modern web technologies. I enjoy solving complex
           problems and building applications that are both functional and
           delightful to use. My journey began with a curiosity for how the web

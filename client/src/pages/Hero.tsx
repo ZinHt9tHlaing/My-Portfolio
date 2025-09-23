@@ -1,6 +1,7 @@
 import { Briefcase, Github } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { motion } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
 
 interface HeroProps {
   handlePageChange: (page: string) => void;
@@ -17,14 +18,25 @@ const Hero = ({ handlePageChange }: HeroProps) => (
       >
         Hi, I'm <span className="text-blue-500">Zin Htet</span>
       </motion.h1>
+
+      
       <motion.p
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         className="text-lg sm:text-2xl text-gray-600 dark:text-gray-400 mb-8"
       >
-        MERN Stack Developer
+        <Typewriter
+          words={["Hi, I'm a  FullStack Developer.", "React & Node.js Lover","I build web applications for a living."]}
+          loop={0} 
+          cursor
+          cursorStyle="|"
+          typeSpeed={70}
+          deleteSpeed={50}
+          delaySpeed={1500}
+        />
       </motion.p>
+
       <motion.p
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -32,9 +44,10 @@ const Hero = ({ handlePageChange }: HeroProps) => (
         className="max-w-3xl mx-auto text-gray-600 dark:text-gray-400 mb-12"
       >
         I specialize in building elegant and scalable full-stack applications
-        with MongoDB, Express.js, React, and Node.js. I'm passionate about
+        with PostgreSQL, Express.js, React, and Node.js. I'm passionate about
         creating responsive and user-friendly web experiences.
       </motion.p>
+
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}

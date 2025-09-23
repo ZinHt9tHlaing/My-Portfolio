@@ -2,13 +2,7 @@ import { BiLogoTypescript } from "react-icons/bi";
 import { FaGithub, FaHtml5, FaNode, FaReact } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { RiTailwindCssFill } from "react-icons/ri";
-import {
-  SiCss3,
-  SiExpress,
-  SiMongodb,
-  SiPostgresql,
-  SiPrisma,
-} from "react-icons/si";
+import { SiCss3, SiExpress, SiPostgresql, SiPrisma } from "react-icons/si";
 
 export const skillIcons = {
   HTML: <FaHtml5 className="text-orange-600" />,

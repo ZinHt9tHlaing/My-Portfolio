@@ -1,35 +1,76 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import Hero from "./pages/Hero";
+import ContactPage from "./pages/ContactPage";
+import AboutPage from "./pages/About";
+import Projects from "./pages/Projects";
+import Navbar from "./components/Navbar";
+import { AnimatePresence } from "framer-motion";
+import Footer from "./components/Footer";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [currentPage, setCurrentPage] = useState("home");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== "undefined" && window.localStorage) {
+      const storedTheme = window.localStorage.getItem("theme");
+      return storedTheme ? storedTheme : "dark";
+    }
+    return "dark";
+  });
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    if (typeof window !== "undefined" && window.localStorage) {
+      window.localStorage.setItem("theme", theme);
+    }
+  }, [theme]);
+
+  const handlePageChange = (page: string) => {
+    setCurrentPage(page);
+    setIsMenuOpen(false);
+  };
+
+  const handleThemeToggle = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
+  const renderPage = () => {
+    switch (currentPage) {
+      case "home":
+        return <Hero handlePageChange={handlePageChange} />;
+      case "about":
+        return <AboutPage />;
+      case "projects":
+        return <Projects />;
+      case "contact":
+        return <ContactPage />;
+      default:
+        return <Hero handlePageChange={handlePageChange} />;
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-300 font-sans">
+      <Navbar
+        currentPage={currentPage}
+        handlePageChange={handlePageChange}
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+        theme={theme}
+        handleThemeToggle={handleThemeToggle}
+      />
+      <AnimatePresence mode="wait">
+        <main className="pt-24 min-h-screen flex flex-col justify-center">
+          {renderPage()}
+        </main>
+      </AnimatePresence>
+      <Footer />
+    </div>
+  );
+};
 
-export default App
+export default App;

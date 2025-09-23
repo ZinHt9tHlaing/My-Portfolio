@@ -3,7 +3,8 @@ import { BsGithub, BsLinkedin } from "react-icons/bs";
 const Footer = () => (
   <footer className="w-full text-center py-6 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
     <p className="text-sm text-gray-500">
-      &copy; {new Date().getFullYear()} Zin Htet. All rights reserved.
+      &copy; {new Date().getFullYear()} <span className="text-portfolio-accent">Zin Htet</span>. All rights
+      reserved.
     </p>
     <div className="flex justify-center space-x-4 mt-2">
       <a

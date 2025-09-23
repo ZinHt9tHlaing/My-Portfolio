@@ -51,7 +51,7 @@ const Hero = ({ handlePageChange }: HeroProps) => (
           href="https://github.com/ZinHt9tHlaing"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center px-6 py-3 rounded-full text-lg font-semibold border-2 border-gray-300 dark:border-gray-500 text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-500 transition-colors duration-300 active:scale-95 duration-200"
+          className="flex items-center px-6 py-3 rounded-full text-lg font-semibold border-2 border-gray-300 dark:border-gray-500 text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-500 transition-colors duration-300 active:scale-95"
         >
           <Github className="mr-2" /> GitHub
         </a>

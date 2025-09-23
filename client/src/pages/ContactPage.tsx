@@ -2,9 +2,8 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import PageWrapper from "../components/PageWrapper";
 import SectionTitle from "../components/SectionTitle";
-import { Mail } from "lucide-react";
-import { BsLinkedin } from "react-icons/bs";
-import { FaGithub } from "react-icons/fa";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { FaFacebook } from "react-icons/fa";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema } from "../schema/contactSchema";
@@ -64,7 +63,7 @@ const ContactPage = () => {
                 type="text"
                 id="name"
                 {...register("name")}
-                className="mt-1 block w-full rounded-md bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 text-gray-900 dark:text-white"
+                className="mt-1 block w-full py-1 px-3 rounded-md bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 text-gray-900 dark:text-white"
               />
               {errors.name && (
                 <p className="text-red-500 text-sm mt-1">
@@ -83,7 +82,7 @@ const ContactPage = () => {
                 type="email"
                 id="email"
                 {...register("email")}
-                className="mt-1 block w-full rounded-md bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 text-gray-900 dark:text-white"
+                className="mt-1 block w-full rounded-md py-1 px-3 bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 text-gray-900 dark:text-white"
               />
               {errors.email && (
                 <p className="text-red-500 text-sm mt-1">
@@ -102,7 +101,7 @@ const ContactPage = () => {
                 id="message"
                 rows={4}
                 {...register("message")}
-                className="mt-1 block w-full rounded-md bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 text-gray-900 dark:text-white"
+                className="mt-1 block w-full py-1 px-3 rounded-md bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 text-gray-900 dark:text-white"
               ></textarea>
               {errors.message && (
                 <p className="text-red-500 text-sm mt-1">
@@ -130,43 +129,93 @@ const ContactPage = () => {
           className="w-full md:w-1/2 p-8 rounded-2xl bg-gray-100 dark:bg-gray-800 shadow-xl space-y-6 flex flex-col items-center justify-center text-center"
         >
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-            My Socials
+            Contact Info
           </h3>
-          <div className="flex flex-col items-center space-y-4">
-            <a
-              href="mailto:https://mail.google.com/mail/u/0/"
-              className="flex items-center space-x-3 text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors duration-200"
-            >
-              <Mail size={24} />
-              <span>zinhtethlaing4@gmail.com</span>
-            </a>
-            <a
-              href="https://linkedin.com/in/your-username"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-3 text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors duration-200"
-            >
-              <BsLinkedin size={24} />
-              <span>LinkedIn</span>
-            </a>
-            <a
-              href="https://github.com/ZinHt9tHlaing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-3 text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors duration-200"
-            >
-              <FaGithub size={24} />
-              <span>GitHub</span>
-            </a>
-            {/* <a
-              href="https://twitter.com/your-username"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-3 text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors duration-200"
-            >
-              <FaXTwitter size={24} />
-              <span>Twitter</span>
-            </a> */}
+          <div className="flex flex-col items-start space-y-4">
+            {/* Email */}
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-lg bg-portfolio-accent/10 text-portfolio-accent">
+                <Mail size={24} />
+              </div>
+              <div className="text-start">
+                <span className="text-sm text-portfolio-text-muted">Email</span>
+                <a
+                  href="mailto:https://mail.google.com/mail/u/0/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-3 text-gray-600 dark:text-gray-300 dark:hover:text-portfolio-accent duration-200 text-portfolio-text hover:text-portfolio-accent transition-colors"
+                >
+                  <span>zinhtethlaing4@gmail.com</span>
+                </a>
+              </div>
+            </div>
+            {/* Phones */}
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-lg bg-portfolio-accent/10 text-portfolio-accent">
+                <Phone size={24} />
+              </div>
+              <div className="text-start">
+                <span className="text-sm text-portfolio-text-muted">
+                  Phones
+                </span>
+                <div className="flex">
+                  <a
+                    href="tel:+959965664813"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-3 text-gray-600 dark:text-gray-300 dark:hover:text-portfolio-accent duration-200 text-portfolio-text hover:text-portfolio-accent transition-colors"
+                  >
+                    <span>09965664813</span>
+                  </a>
+                  <span className="me-2">,</span>
+                  <a
+                    href="tel:+959792746290"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-3 text-gray-600 dark:text-gray-300 dark:hover:text-portfolio-accent duration-200 text-portfolio-text hover:text-portfolio-accent transition-colors"
+                  >
+                    <span>09792746290</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            {/* Facebook */}
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-lg bg-portfolio-accent/10 text-portfolio-accent">
+                <FaFacebook size={24} />
+              </div>
+              <div className="text-start">
+                <span className="text-sm text-portfolio-text-muted">
+                  Facebook
+                </span>
+                <a
+                  href="https://www.facebook.com/zin.htet.52687506"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-3 text-gray-600 dark:text-gray-300 dark:hover:text-portfolio-accent duration-200 text-portfolio-text hover:text-portfolio-accent transition-colors"
+                >
+                  <span>Zin Htet</span>
+                </a>
+              </div>
+            </div>
+            {/* Location */}
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-lg bg-portfolio-accent/10 text-portfolio-accent">
+                <MapPin size={24} />
+              </div>
+              <div className="text-start">
+                <span className="text-sm text-portfolio-text-muted">
+                  Location
+                </span>
+                <a
+                  href="#"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-3 text-gray-600 dark:text-gray-300 dark:hover:text-portfolio-accent duration-200 text-portfolio-text hover:text-portfolio-accent transition-colors"
+                >
+                  <span>Yangon, Myanmar</span>
+                </a>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>

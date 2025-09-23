@@ -35,7 +35,7 @@ const Navbar = ({
           className="text-gray-900 dark:text-white font-bold text-2xl"
         >
           <a href="#" onClick={() => handlePageChange("home")}>
-            &lt;Dev/&gt;
+            &lt;<span className="text-blue-500">ZHH</span> /&gt;
           </a>
         </motion.div>
 

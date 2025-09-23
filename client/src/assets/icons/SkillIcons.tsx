@@ -11,16 +11,16 @@ import {
 } from "react-icons/si";
 
 export const skillIcons = {
-  HTML5: <FaHtml5 className="text-orange-600" />,
-  CSS3: <SiCss3 className="text-blue-700" />,
+  HTML: <FaHtml5 className="text-orange-600" />,
+  CSS: <SiCss3 className="text-blue-700" />,
   "Tailwind CSS": <RiTailwindCssFill className="text-teal-600" />,
   JavaScript: <IoLogoJavascript className="text-yellow-500" />,
   TypeScript: <BiLogoTypescript className="text-blue-600" />,
-  "React.js": <FaReact className="text-blue-500" />,
-  "Git & GitHub": <FaGithub className="text-gray-900 dark:text-white" />,
-  "Node.js": <FaNode className="text-green-600" />,
-  "Express.js": <SiExpress className="text-gray-700 dark:text-gray-200" />,
+  ReactJS: <FaReact className="text-blue-500" />,
+  GitHub: <FaGithub className="text-gray-900 dark:text-white" />,
+  NodeJS: <FaNode className="text-green-600" />,
+  ExpressJS: <SiExpress className="text-gray-700 dark:text-gray-200" />,
   // MongoDB: <SiMongodb className="text-green-700 dark:text-green-600" />,
   Prisma: <SiPrisma />,
-  Postgresql: <SiPostgresql className="text-blue-700 dark:text-blue-600" />,
+  PostgreSQL: <SiPostgresql className="text-blue-700 dark:text-blue-600" />,
 } as const;

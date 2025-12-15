@@ -9,7 +9,7 @@ const Footer = () => (
     </p>
     <div className="flex justify-center space-x-4 mt-2">
       <a
-        href="https://linkedin.com/in/your-username"
+        href="https://www.linkedin.com/in/zinhtetdev/"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="LinkedIn"

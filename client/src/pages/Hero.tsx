@@ -8,8 +8,10 @@ const Hero = () => (
     <div className="text-center pb-16 pt-7 md:pt-0 md:pb-24">
       {/* Animated Profile Photo */}
       <motion.img
-        src="/profile.jpg"
+        src="/images/profile.jpg"
         alt="Profile Photo"
+        loading="lazy"
+        decoding="async"
         initial={{ y: 0 }}
         animate={{ y: [0, -10, 0] }}
         transition={{
@@ -37,8 +39,8 @@ const Hero = () => (
       >
         <Typewriter
           words={[
-            "Hi, I'm a  FullStack Developer.",
-            "React & Node.js Lover",
+            "Hi, I'm a Full-Stack Developer.",
+            "ReactJS & NodeJS Lover",
             "I build web applications for a living.",
           ]}
           loop={0}
@@ -68,8 +70,8 @@ const Hero = () => (
         className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-5 px-4"
       >
         <a
-          href="/ZInHtetHlaing_Resume.pdf"
-          download="zhh_resume.pdf"
+          href="/images/ZHH_Resume.pdf"
+          download="ZHH_Resume.pdf"
           className="w-full sm:w-auto"
         >
           <button className="w-[60%] mx-auto sm:mx-0 sm:w-auto flex items-center justify-center px-4 xs:px-5 md:px-6 lg:px-8 py-2 xs:py-2.5 md:py-3 rounded-full text-sm xs:text-base md:text-lg font-semibold bg-blue-600 border-2 border-blue-500 hover:bg-blue-700 text-white transition-all duration-300 shadow-lg active:scale-95">

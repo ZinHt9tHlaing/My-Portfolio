@@ -15,7 +15,7 @@ export const projectData = [
     description:
       "A real-time, multi-user chat application using WebSockets for instant messaging. Features include user online/offline status, private messaging, and group chat functionality.",
     tech: ["React", "Tailwind CSS", "TypeScript"],
-    github: "https://github.com/ZinHt9tHlaing/Portfolio",
+    github: "https://github.com/ZinHt9tHlaing/My-Portfolio",
     live: "https://zinhtet.netlify.app/",
     image: "/images/portfolio.png",
   },

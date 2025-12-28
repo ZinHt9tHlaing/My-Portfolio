@@ -3,7 +3,7 @@ export const projectData = [
     id: 1,
     title: "Furniture Shop",
     description:
-      "A full-stack e-commerce site with user authentication, product catalog, shopping cart. Built from the ground up to handle a seamless shopping experience.",
+      "A full-stack Furniture shop site with user authentication, product catalog, shopping cart. Built from the ground up to handle a seamless shopping experience.",
     tech: ["React", "Tailwind CSS", "Node", "Express", "PostgreSQL"],
     github: "https://github.com/ZinHt9tHlaing/Furniture-Project",
     live: "#",
@@ -13,7 +13,7 @@ export const projectData = [
     id: 2,
     title: "Portfolio",
     description:
-      "A real-time, multi-user chat application using WebSockets for instant messaging. Features include user online/offline status, private messaging, and group chat functionality.",
+      "A personal portfolio website to showcase my skills and projects. Built with React, Tailwind CSS, and TypeScript.",
     tech: ["React", "Tailwind CSS", "TypeScript"],
     github: "https://github.com/ZinHt9tHlaing/My-Portfolio",
     live: "https://zinhtet.netlify.app/",
@@ -21,12 +21,12 @@ export const projectData = [
   },
   {
     id: 3,
-    title: "Task Management API",
+    title: "E-Shop",
     description:
-      "A robust and scalable RESTful API for a task management application. The API provides endpoints for CRUD operations on tasks, user authentication, and task filtering and sorting.",
-    tech: ["Node", "Express", "MongoDB", "Mongoose"],
-    github: "https://github.com/ZinHt9tHlaing/e-shop-backend",
+      "A full-stack E-Shop site with user authentication, product, order, shopping cart and Admin dashboard. Built from the ground up to handle a seamless shopping experience.",
+    tech: ["React", "Tailwind CSS", "Node", "Express", "MongoDB", "Mongoose"],
+    github: "https://github.com/ZinHt9tHlaing/E-Shop",
     live: "#",
-    image: "https://placehold.co/600x400/1e293b/d1d5db?text=API",
+    image: "/images/e-shop.png",
   },
 ];

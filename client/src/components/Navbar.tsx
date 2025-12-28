@@ -60,7 +60,7 @@ const Navbar = ({
             onClick={handleThemeToggle}
             className="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-500"
           >
-            {theme === "dark" ? <Sun size={24} /> : <Moon size={24} />}
+            {theme === "dark" ? <Moon size={24} /> : <Sun size={24} />}
           </button>
         </div>
 
@@ -70,7 +70,7 @@ const Navbar = ({
             onClick={handleThemeToggle}
             className="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-500"
           >
-            {theme === "dark" ? <Sun size={24} /> : <Moon size={24} />}
+            {theme === "dark" ? <Moon size={24} /> : <Sun size={24} />}
           </button>
           <button
             className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-500"

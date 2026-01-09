@@ -59,7 +59,7 @@ const Hero = () => (
         className="max-w-3xl mx-auto text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed text-gray-600 dark:text-gray-400 mb-12 px-4"
       >
         I specialize in building elegant and scalable full-stack applications
-        with PostgreSQL, Express.js, React, and Node.js. I'm passionate about
+        with React, Node.js, Express.js and MongoDB . I'm passionate about
         creating responsive and user-friendly web experiences.
       </motion.p>
 

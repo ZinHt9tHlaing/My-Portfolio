@@ -2,7 +2,13 @@ import { motion } from "framer-motion";
 import PageWrapper from "../components/PageWrapper";
 import SectionTitle from "../components/SectionTitle";
 import { projectData } from "../data/projectData";
-import { Briefcase, Github } from "lucide-react";
+import { Briefcase } from "lucide-react";
+import { Link } from "react-router-dom";
+import { BsGithub } from "react-icons/bs";
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
 const Projects = () => (
   <PageWrapper pageKey="projects">
@@ -10,7 +16,7 @@ const Projects = () => (
       title="My Projects"
       subtitle="Explore some of my recent work."
     />
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
       {projectData.map((project) => (
         <motion.div
           key={project.id}
@@ -21,6 +27,8 @@ const Projects = () => (
         >
           <img
             src={project.image}
+            loading="lazy"
+            decoding="async"
             alt={`Screenshot of ${project.title}`}
             className="w-full h-48 object-cover"
           />
@@ -42,22 +50,22 @@ const Projects = () => (
               ))}
             </div>
             <div className="flex space-x-4">
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to={project.github}
+                onClick={project.github === "#" ? scrollToTop : undefined}
+                target={project.github === "#" ? "_self" : "_blank"}
                 className="flex items-center justify-center px-4 py-2 rounded-full text-sm font-semibold border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-blue-600 hover:text-blue-600 transition-colors duration-300"
               >
-                <Github className="mr-2" size={16} /> GitHub
-              </a>
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
+                <BsGithub className="mr-2" size={16} /> GitHub
+              </Link>
+              <Link
+                to={project.live}
+                onClick={project.live === "#" ? scrollToTop : undefined}
+                target={project.live === "#" ? "_self" : "_blank"}
                 className="flex items-center justify-center px-4 py-2 rounded-full text-sm font-semibold bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-300"
               >
                 <Briefcase className="mr-2" size={16} /> Live Demo
-              </a>
+              </Link>
             </div>
           </div>
         </motion.div>

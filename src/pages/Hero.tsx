@@ -1,7 +1,8 @@
-import { Download, Github } from "lucide-react";
+import { Download } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
+import { FaGithub } from "react-icons/fa";
 
 const Hero = () => (
   <PageWrapper pageKey="home">
@@ -59,8 +60,9 @@ const Hero = () => (
         className="max-w-3xl mx-auto text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed text-gray-600 dark:text-gray-400 mb-12 px-4"
       >
         I specialize in building elegant and scalable full-stack applications
-        with React, Node.js, Express.js and MongoDB . I'm passionate about
-        creating responsive and user-friendly web experiences.
+        with <strong>React</strong>, <strong>Node.js</strong>,{" "}
+        <strong>Express.js</strong> and <strong>PostgreSQL</strong>. I'm
+        passionate about creating responsive and user-friendly web experiences.
       </motion.p>
 
       <motion.div
@@ -70,7 +72,7 @@ const Hero = () => (
         className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-5 px-4"
       >
         <a
-          href="/images/ZHH_Resume.pdf"
+          href="/images/ZinHtet.pdf"
           download="ZHH_Resume.pdf"
           className="w-full sm:w-auto"
         >
@@ -85,7 +87,7 @@ const Hero = () => (
           className="w-full sm:w-auto"
         >
           <button className="w-[60%] mx-auto sm:mx-0 sm:w-auto flex items-center justify-center px-4 xs:px-5 md:px-6 lg:px-8 py-2 xs:py-2.5 md:py-3 rounded-full text-sm xs:text-base md:text-lg font-semibold border-2 border-gray-300 dark:border-gray-500 text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-500 transition-all duration-300 active:scale-95">
-            <Github className="mr-2 size-4 md:h-5 md:w-5" /> GitHub
+            <FaGithub className="mr-2 size-4 md:h-5 md:w-5" /> GitHub
           </button>
         </a>
       </motion.div>

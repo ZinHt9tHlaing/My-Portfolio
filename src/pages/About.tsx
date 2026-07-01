@@ -19,16 +19,21 @@ const About = () => (
         className="w-full md:w-1/2"
       >
         <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-          Hello! I'm a passionate and motivated FullStack developer with a
-          strong foundation in modern web technologies. I enjoy solving complex
-          problems and building applications that are both functional and
-          delightful to use. My journey began with a curiosity for how the web
-          works, which quickly evolved into a full-fledged passion for coding.
+          I am a motivated FullStack Developer with a strong foundation in both
+          frontend and backend technologies. During my 3-month internship as a
+          Frontend Developer, I built mobile-responsive applications using
+          <strong> React</strong>, <strong>TypeScript</strong>,
+          <strong> Tailwind CSS</strong>, and <strong>TanStack Query</strong>.
+          Currently, my primary focus is on building robust APIs and scalable
+          backend systems using <strong>Node.js</strong>, <strong>Express.js</strong>,
+          <strong>PostgreSQL</strong>, and <strong>Prisma</strong>.
         </p>
         <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-          I'm a quick learner and always eager to take on new challenges. I'm
-          looking for a junior developer role where I can contribute to a team,
-          grow my skills, and build meaningful products.
+          I enjoy building real-world projects, continuously improving my
+          technical skills, and learning modern web technologies. My goal is to
+          become a well-rounded Web developer who can build scalable,
+          user-friendly, and efficient web applications while contributing
+          positively to a collaborative development team.
         </p>
       </motion.div>
       <motion.div
